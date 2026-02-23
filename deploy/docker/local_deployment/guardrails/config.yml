@@ -30,10 +30,10 @@ models:
       base_url: "http://host.docker.internal:11434/v1"
       api_key: "ollama"
 
-rails:
-  input:
-    flows:
-      - self check input
+# rails:
+#   input:
+#     flows:
+#       - self check input
 
 instructions:
   - type: general
