@@ -17,7 +17,7 @@
 
 models:
   - type: main
-    engine: openai_chat
+    engine: openai
     model: llama3.1:8b
     parameters:
       base_url: "http://host.docker.internal:11434/v1"
