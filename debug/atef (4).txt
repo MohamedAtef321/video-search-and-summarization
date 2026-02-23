@@ -1,0 +1,83 @@
+ docker logs -f local_deployment-via-server-1                                       GPU has 5 decode engines
+Free GPU memory is 81154 MiB
+Total GPU memory is 81920 MiB per GPU
+Auto-selecting VLM Batch Size to 128
+Using openai-compat
+Starting VIA server in release mode
+2026-02-23 05:40:06,874 INFO Initializing VIA Stream Handler
+INFO:     Started server process [180]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:60000 (Press CTRL+C to quit)
+2026-02-23 05:42:00,247 INFO Loaded Guardrails
+2026-02-23 05:42:00,247 INFO {'gdino_engine': '/root/.via/ngc_model_cache//cv_pipeline_models/swin.fp16.engine', 'tracker_config': '/tmp/via_tracker_config.yml', 'inference_interval': 1}
+2026-02-23 05:42:00,247 INFO Initializing VLM pipeline
+2026-02-23 05:42:00,251 INFO Have peer access: True
+2026-02-23 05:42:00,256 WARNING OPENAI_API_VERSION is not configured; May be required for certain model deployments;
+2026-02-23 05:42:00,256 INFO AZURE_OPENAI_API_VERSION is not configured; May be required for certain model deployments;
+2026-02-23 05:42:00,258 INFO OPENAI_API_KEY configured
+2026-02-23 05:42:00,258 INFO VIA_VLM_ENDPOINT is not configured; using OpenAI() default
+2026-02-23 05:42:00,280 INFO endpoint is https://api.openai.com/v1/
+2026-02-23 05:42:00,728 INFO Traceback (most recent call last):
+  File "/opt/nvidia/via/via-engine/models/openai_compat/openai_compat_model.py", line 353, in generate
+    resp = self._client.chat.completions.create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/openai/resources/chat/completions/completions.py", line 1192, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: NOAPIKEYSET. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+2026-02-23 05:42:00,728 ERROR Failed to load VIA stream handler - Error connecting to model
+Traceback (most recent call last):
+  File "/opt/nvidia/via/via-engine/vlm_pipeline/vlm_pipeline.py", line 1324, in __init__
+    CompOpenAIModel(True)
+  File "/opt/nvidia/via/via-engine/models/openai_compat/openai_compat_model.py", line 200, in __init__
+    self.generate("", [[]], [[]], None, None)
+  File "/opt/nvidia/via/via-engine/models/openai_compat/openai_compat_model.py", line 376, in generate
+    raise ex from None
+  File "/opt/nvidia/via/via-engine/models/openai_compat/openai_compat_model.py", line 353, in generate
+    resp = self._client.chat.completions.create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/openai/resources/chat/completions/completions.py", line 1192, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: NOAPIKEYSET. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/nvidia/via/via-engine/via_server.py", line 247, in run
+    self._stream_handler = ViaStreamHandler(self._args)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/nvidia/via/via-engine/via_stream_handler.py", line 595, in __init__
+    self._vlm_pipeline = VlmPipeline(args.asset_dir, args)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/nvidia/via/via-engine/vlm_pipeline/vlm_pipeline.py", line 1330, in __init__
+    raise Exception("Error connecting to model") from e
+Exception: Error connecting to model
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/nvidia/via/via-engine/via_server.py", line 2376, in <module>
+    server.run()
+  File "/opt/nvidia/via/via-engine/via_server.py", line 249, in run
+    raise ViaException(f"Failed to load VIA stream handler - {str(ex)}")
+via_exception.ViaException: ViaException - code: InternalServerError message: Failed to load VIA stream handler - Error connecting to model
+Killed process with PID 177
