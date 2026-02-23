@@ -17,16 +17,18 @@
 
 models:
   - type: main
-    engine: nim
-    model: meta/llama-3.1-70b-instruct
+    engine: openai
+    model: llama3.1:8b
     parameters:
-      base_url: "http://host.docker.internal:8000/v1"
+      base_url: "http://host.docker.internal:11434/v1"
+      api_key: "ollama"
 
   - type: embeddings
-    engine: nim
-    model: nvidia/llama-3.2-nv-embedqa-1b-v2
+    engine: nim_patch
+    model: qwen3-embedding:4b
     parameters:
-      base_url: "http://host.docker.internal:9234/v1"
+      base_url: "http://host.docker.internal:11434/v1"
+      api_key: "ollama"
 
 rails:
   input:
@@ -80,7 +82,7 @@ prompts:
       - "{{ history | colang | to_messages }}"
       - type: assistant
         content: |
-            Bot thinking: potential user intents are: {{ potential_user_intents }}
+          Bot thinking: potential user intents are: {{ potential_user_intents }}
 
     output_parser: "verbose_v1"
 
@@ -107,24 +109,24 @@ prompts:
     messages:
       - type: system
         content: |
-            {{ general_instructions }}{% if relevant_chunks != None and relevant_chunks != '' %}
-            This is some relevant context:
-            ```markdown
-            {{ relevant_chunks }}
-            ```{% endif %}
-            Your task is to generate the bot message in a conversation given the last user message, user intent and bot intent.
-            Similar to the examples below.
-            Do not provide any explanations, just output the bot message.
+          {{ general_instructions }}{% if relevant_chunks != None and relevant_chunks != '' %}
+          This is some relevant context:
+          ```markdown
+          {{ relevant_chunks }}
+          ```{% endif %}
+          Your task is to generate the bot message in a conversation given the last user message, user intent and bot intent.
+          Similar to the examples below.
+          Do not provide any explanations, just output the bot message.
 
-            # Examples:
-            {{ examples | verbose_v1 }}
+          # Examples:
+          {{ examples | verbose_v1 }}
 
       - "{{ sample_conversation | first_turns(2) | to_intent_messages_2 }}"
       - "{{ history | colang | to_intent_messages_2 }}"
 
     output_parser: "verbose_v1"
 
-# Prompt for generating the value of a context variable.
+  # Prompt for generating the value of a context variable.
   - task: generate_value
 
     messages:
@@ -142,7 +144,7 @@ prompts:
       - "{{ history | colang | to_messages }}"
       - type: assistant
         content: |
-            Bot thinking: follow the following instructions: {{ instructions }}
-            ${{ var_name }} =
+          Bot thinking: follow the following instructions: {{ instructions }}
+          ${{ var_name }} =
 
     output_parser: "verbose_v1"

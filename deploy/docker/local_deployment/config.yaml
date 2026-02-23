@@ -39,41 +39,46 @@ tools:
   chat_llm:
     type: llm
     params:
-      model: meta/llama-3.1-70b-instruct
-      base_url: "http://host.docker.internal:8000/v1" #FIXME - update url to running LLM Instance
+      model: llama3.1:8b
+      base_url: "http://host.docker.internal:11434/v1"
       max_tokens: 2048
       temperature: 0.2
       top_p: 0.7
+      api_key: "ollama"
 
   summarization_llm:
     type: llm
     params:
-      model: meta/llama-3.1-70b-instruct
-      base_url: "http://host.docker.internal:8000/v1" #FIXME - update url to running LLM Instance
+      model: llama3.1:8b
+      base_url: "http://host.docker.internal:11434/v1"
       max_tokens: 2048
       temperature: 0.2
       top_p: 0.7
+      api_key: "ollama"
 
   notification_llm:
     type: llm
     params:
-      model: meta/llama-3.1-70b-instruct
-      base_url: "http://host.docker.internal:8000/v1" #FIXME - update url to running LLM Instance
+      model: llama3.1:8b
+      base_url: "http://host.docker.internal:11434/v1"
       max_tokens: 2048
       temperature: 0.2
       top_p: 0.7
+      api_key: "ollama"
 
   nvidia_embedding:
     type: embedding
     params:
-      model: nvidia/llama-3.2-nv-embedqa-1b-v2
-      base_url: "http://host.docker.internal:9234/v1" #FIXME
+      model: qwen3-embedding:4b
+      base_url: "http://host.docker.internal:11434/v1"
+      api_key: "ollama"
 
   nvidia_reranker:
     type: reranker
     params:
-      model: nvidia/llama-3.2-nv-rerankqa-1b-v2
-      base_url: "http://host.docker.internal:9235/v1" #FIXME - update url to running reranker NIM Instance
+      model: dengcao/Qwen3-Reranker-8B:Q8_0
+      base_url: "http://host.docker.internal:11434/v1"
+      api_key: "ollama"
 
   notification_tool:
     type: alert_sse_notifier
