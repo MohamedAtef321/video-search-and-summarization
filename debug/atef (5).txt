@@ -1,0 +1,258 @@
+2026-02-23 07:26:03,758 INFO Removed asset a6f8a8a5-8342-4db7-8941-8a51ddd6213c and cleaned up associated resources
+INFO:     127.0.0.1:33392 - "DELETE /files/a6f8a8a5-8342-4db7-8941-8a51ddd6213c HTTP/1.1" 200 OK
+2026-02-23 07:26:03 | INFO | stdout | INFO:     10.20.20.11:56860 - "POST /gradio_api/queue/join HTTP/1.1" 200 OK
+2026-02-23 07:26:03 | INFO | stdout | INFO:     10.20.20.11:56862 - "POST /gradio_api/queue/join HTTP/1.1" 200 OK
+2026-02-23 07:26:03 | INFO | stdout | INFO:     10.20.20.11:56861 - "POST /gradio_api/queue/join HTTP/1.1" 200 OK
+2026-02-23 07:26:03 | INFO | stdout | INFO:     10.20.20.11:56860 - "GET /gradio_api/queue/data?session_hash=1c2lbdcytfe HTTP/1.1" 200 OK
+2026-02-23 07:26:04 | INFO | stdout | INFO:     172.8.22.59:40366 - "GET /metrics HTTP/1.1" 404 Not Found
+2026-02-23 07:26:07 | INFO | stdout | INFO:     10.20.20.11:56860 - "POST /gradio_api/queue/join HTTP/1.1" 200 OK
+2026-02-23 07:26:07 | INFO | stdout | INFO:     10.20.20.11:56860 - "GET /gradio_api/queue/data?session_hash=1c2lbdcytfe HTTP/1.1" 200 OK
+2026-02-23 07:26:14 | INFO | stdout | INFO:     172.8.22.59:39342 - "GET /metrics HTTP/1.1" 404 Not Found
+2026-02-23 07:26:24 | INFO | stdout | INFO:     172.8.22.59:37592 - "GET /metrics HTTP/1.1" 404 Not Found
+2026-02-23 07:26:30 | INFO | stdout | INFO:     10.20.20.11:56863 - "POST /gradio_api/queue/join HTTP/1.1" 200 OK
+2026-02-23 07:26:30 | INFO | stdout | INFO:     10.20.20.11:56863 - "GET /gradio_api/queue/data?session_hash=1c2lbdcytfe HTTP/1.1" 200 OK
+2026-02-23 07:26:34 | INFO | stdout | INFO:     172.8.22.59:40938 - "GET /metrics HTTP/1.1" 404 Not Found
+2026-02-23 07:26:41 | INFO | stdout | INFO:     10.20.20.11:56864 - "GET / HTTP/1.1" 200 OK
+2026-02-23 07:26:41 | INFO | stdout | INFO:     10.20.20.11:56864 - "GET /gradio_api/heartbeat/vxk6up5rj9h HTTP/1.1" 200 OK
+2026-02-23 07:26:41 | INFO | stdout | INFO:     10.20.20.11:56865 - "GET /theme.css?v=bb5d0d232947cc4017bedf99d5f9c5c1c849229a5ea4ed9f83f8c1d0fa843397 HTTP/1.1" 200 OK
+2026-02-23 07:26:41 | INFO | stdout | INFO:     10.20.20.11:56865 - "GET /gradio_api/custom_component/6ae2ee6051b84dd765d62490bc6d3fc2974cc5d06a7deb026ceaeacd2b5113ea/client/component/style.css HTTP/1.1" 304 Not Modified
+2026-02-23 07:26:41 | INFO | stdout | INFO:     10.20.20.11:56866 - "GET /gradio_api/custom_component/6ae2ee6051b84dd765d62490bc6d3fc2974cc5d06a7deb026ceaeacd2b5113ea/client/component/index.js HTTP/1.1" 304 Not Modified
+2026-02-23 07:26:41 | INFO | stdout | INFO:     10.20.20.11:56866 - "POST /gradio_api/queue/join HTTP/1.1" 200 OK
+2026-02-23 07:26:41 | INFO | stdout | INFO:     10.20.20.11:56865 - "POST /gradio_api/queue/join HTTP/1.1" 200 OK
+2026-02-23 07:26:41 | INFO | stdout | INFO:     10.20.20.11:56867 - "POST /gradio_api/queue/join HTTP/1.1" 200 OK
+2026-02-23 07:26:41 | INFO | stdout | INFO:     10.20.20.11:56866 - "GET /gradio_api/queue/data?session_hash=vxk6up5rj9h HTTP/1.1" 200 OK
+2026-02-23 07:26:44 | INFO | stdout | INFO:     172.8.22.59:58606 - "GET /metrics HTTP/1.1" 404 Not Found
+2026-02-23 07:26:44 | INFO | stdout | INFO:     10.20.20.11:56866 - "POST /gradio_api/queue/join HTTP/1.1" 200 OK
+2026-02-23 07:26:44 | INFO | stdout | INFO:     10.20.20.11:56866 - "GET /gradio_api/queue/data?session_hash=vxk6up5rj9h HTTP/1.1" 200 OK
+2026-02-23 07:26:54 | INFO | stdout | INFO:     172.8.22.59:56918 - "GET /metrics HTTP/1.1" 404 Not Found
+2026-02-23 07:27:04 | INFO | stdout | INFO:     172.8.22.59:47906 - "GET /metrics HTTP/1.1" 404 Not Found
+2026-02-23 07:27:14 | INFO | stdout | INFO:     172.8.22.59:53314 - "GET /metrics HTTP/1.1" 404 Not Found
+2026-02-23 07:27:24 | INFO | stdout | INFO:     172.8.22.59:50424 - "GET /metrics HTTP/1.1" 404 Not Found
+2026-02-23 07:27:24 | INFO | stdout | INFO:     10.20.20.11:56868 - "POST /gradio_api/queue/join HTTP/1.1" 200 OK
+2026-02-23 07:27:24 | INFO | stdout | INFO:     10.20.20.11:56868 - "GET /gradio_api/queue/data?session_hash=vxk6up5rj9h HTTP/1.1" 200 OK
+2026-02-23 07:27:30 | WARNING | python_multipart.multipart | Skipping data after last boundary
+2026-02-23 07:27:30 | INFO | stdout | INFO:     10.20.20.11:56870 - "POST /gradio_api/upload?upload_id=q0v6ni5rn8l HTTP/1.1" 200 OK
+2026-02-23 07:27:30 | INFO | stdout | INFO:     10.20.20.11:56870 - "POST /gradio_api/queue/join HTTP/1.1" 200 OK
+2026-02-23 07:27:31 | INFO | stdout | INFO:     10.20.20.11:56872 - "POST /gradio_api/queue/join HTTP/1.1" 200 OK
+2026-02-23 07:27:31 | INFO | stdout | INFO:     10.20.20.11:56870 - "POST /gradio_api/queue/join HTTP/1.1" 200 OK
+2026-02-23 07:27:31 | INFO | gradio_web_server | Video length: 6.00 seconds
+2026-02-23 07:27:31 | INFO | gradio_web_server | Video length: 6.00 seconds
+2026-02-23 07:27:31,054 INFO recommended_config(); chunk_size=6; target_response_time=120; usecase_event_duration=10
+2026-02-23 07:27:31,055 INFO recommended_config(); chunk_size=6; target_response_time=120; usecase_event_duration=10
+2026-02-23 07:27:31 | INFO | stdout | INFO:     10.20.20.11:56874 - "GET /gradio_api/file%3D/tmp/gradio/94ab7702cef93704c3ccf2aa1a7f3c88097c6d0a51bf1052e065c0f851698eb5/21117-315137086_small.mp4 HTTP/1.1" 206 Partial Content
+2026-02-23 07:27:31 | INFO | stdout | INFO:     10.20.20.11:56870 - "GET /gradio_api/queue/data?session_hash=vxk6up5rj9h HTTP/1.1" 200 OK
+2026-02-23 07:27:31,078 INFO recommended_chunk_size is 0.9
+INFO:     127.0.0.1:56816 - "POST /recommended_config HTTP/1.1" 200 OK
+2026-02-23 07:27:31,098 INFO recommended_chunk_size is 0.9
+INFO:     127.0.0.1:56832 - "POST /recommended_config HTTP/1.1" 200 OK
+2026-02-23 07:27:33 | INFO | stdout | INFO:     10.20.20.11:56874 - "POST /gradio_api/queue/join HTTP/1.1" 200 OK
+2026-02-23 07:27:33 | INFO | stdout | INFO:     10.20.20.11:56874 - "GET /gradio_api/queue/data?session_hash=vxk6up5rj9h HTTP/1.1" 200 OK
+2026-02-23 07:27:33 | INFO | stdout | INFO:     10.20.20.11:56874 - "POST /gradio_api/queue/join HTTP/1.1" 200 OK
+2026-02-23 07:27:33 | INFO | stdout | INFO:     10.20.20.11:56874 - "GET /gradio_api/queue/data?session_hash=vxk6up5rj9h HTTP/1.1" 200 OK
+2026-02-23 07:27:33 | INFO | gradio_web_server | summarize. ip: 10.20.20.11
+2026-02-23 07:27:33,655 INFO Received add video file request - purpose Purpose.VISION, media_type MediaType.VIDEO have file None, filename - /tmp/gradio/94ab7702cef93704c3ccf2aa1a7f3c88097c6d0a51bf1052e065c0f851698eb5/21117-315137086_small.mp4, camera_id - default
+2026-02-23 07:27:33,655 INFO [AssetManager] Added file from path - asset-id: b264f2ce-f382-4c76-9396-7ab012f8ab1d original path: /tmp/gradio/94ab7702cef93704c3ccf2aa1a7f3c88097c6d0a51bf1052e065c0f851698eb5/21117-315137086_small.mp4
+INFO:     127.0.0.1:56816 - "POST /files HTTP/1.1" 200 OK
+2026-02-23 07:27:33 | INFO | stdout | INFO:     10.20.20.11:56874 - "GET /gradio_api/file%3D/tmp/gradio/ee333ce744069f19bdf9fdf4bff8c309c33bc73da92b90409243fa55068f23ad/tmpwx14g7p7 HTTP/1.1" 200 OK
+2026-02-23 07:27:33 | INFO | stdout | INFO:     10.20.20.11:56870 - "POST /gradio_api/queue/join HTTP/1.1" 200 OK
+2026-02-23 07:27:33 | INFO | gradio_web_server | summarize. ip: 10.20.20.11
+2026-02-23 07:27:33,759 INFO Received list models request. Responding with 1 models info
+INFO:     127.0.0.1:56832 - "GET /models HTTP/1.1" 200 OK
+2026-02-23 07:27:33,763 INFO Received summarize query, id - b264f2ce-f382-4c76-9396-7ab012f8ab1d (live-stream=0), chunk_duration=5, chunk_overlap_duration=0, media-offset-type=None, media-start-time=None, media-end-time=None, modelParams={"max_tokens": 7890, "temperature": 0.4, "top_p": 1.0, "top_k": 100.0}, summary_duration=0, stream=True num_frames_per_chunk=100 vlm_input_width = 100, vlm_input_height = 100, summarize_batch_size = 6, summarize_max_tokens = 2048, summarize_temperature = 0.2, summarize_top_p = 0.7, rag_top_k = 10, rag_batch_size = 5, chat_max_tokens = 2048, chat_temperature = 0.2, chat_top_p = 0.7, notification_max_tokens = 2048, notification_temperature = 0.2, notification_top_p = 0.7, summarization enabled = True, chat enabled = True, cv_pipeline_prompt = person . forklift . robot . fire . spill , enable_cv_metadata = 0, enable_chat_history = 1, collection_name = None, custom_metadata = None, delete_external_collection = False, camera_id = None, enable_audio = 0
+2026-02-23 07:27:33 | INFO | stdout | INFO:     10.20.20.11:56874 - "GET /gradio_api/queue/data?session_hash=vxk6up5rj9h HTTP/1.1" 200 OK
+2026-02-23 07:27:33,769 INFO Getting new Context Manager for b264f2ce-f382-4c76-9396-7ab012f8ab1d
+2026-02-23 07:27:33,795 INFO Filtered config: kept 4 functions out of 4
+2026-02-23 07:27:33,795 INFO Filtered config: kept 6 tools out of 8
+2026-02-23 07:27:33,795 INFO Filtered config: kept 4 functions out of 4
+2026-02-23 07:27:33,796 INFO Filtered config: kept 6 tools out of 8
+2026-02-23 07:27:33,796 INFO Configuring tools using ToolFactory
+2026-02-23 07:27:33,796 INFO Creating tools in topological order: ['summarization_llm', 'nvidia_embedding', 'notification_llm', 'notification_tool', 'chat_llm', 'graph_db']
+2026-02-23 07:27:33,796 INFO Processing tool: summarization_llm of type llm
+2026-02-23 07:27:33,796 INFO Updating existing tool 'summarization_llm' of type 'llm'
+2026-02-23 07:27:33,797 INFO Processing tool: nvidia_embedding of type embedding
+2026-02-23 07:27:33,797 INFO Updating existing tool 'nvidia_embedding' of type 'embedding'
+2026-02-23 07:27:33,797 INFO Initialized NVIDIAEmbeddingTool with model: qwen3-embedding:4b
+2026-02-23 07:27:33,797 INFO Processing tool: notification_llm of type llm
+2026-02-23 07:27:33,797 INFO Updating existing tool 'notification_llm' of type 'llm'
+2026-02-23 07:27:33,797 INFO Processing tool: notification_tool of type alert_sse_notifier
+2026-02-23 07:27:33,797 INFO Updating existing tool 'notification_tool' of type 'alert_sse_notifier'
+2026-02-23 07:27:33,797 INFO Processing tool: chat_llm of type llm
+2026-02-23 07:27:33,797 INFO Updating existing tool 'chat_llm' of type 'llm'
+2026-02-23 07:27:33,798 INFO Processing tool: graph_db of type ***MASKED***
+2026-02-23 07:27:33,798 INFO Updating existing tool 'graph_db' of type '***MASKED***'
+2026-02-23 07:27:33,798 INFO Attempting to connect to Neo4j (attempt 1/5) at graph-db:7687
+2026-02-23 07:27:33,809 INFO Successfully connected to Neo4j database.
+2026-02-23 07:27:33 | INFO | stdout | INFO:     10.20.20.11:56871 - "GET /gradio_api/upload_progress?upload_id=undefined HTTP/1.1" 404 Not Found
+2026-02-23 07:27:33,850 INFO Index already exist,Skipping creation.
+2026-02-23 07:27:33,850 INFO TOOLS: {'embedding': {'nvidia_embedding': <vss_ctx_rag.tools.embedding.embedding_tool.NVIDIAEmbeddingTool object at 0x7ef697aea090>}, 'milvus': {}, 'gnn': {}, 'image': {}, 'alert_sse_notifier': {'notification_tool': <vss_ctx_rag.tools.notification.alert_sse_tool.AlertSSETool object at 0x7ef69775d250>}, 'echo_notifier': {}, 'llm': {'summarization_llm': <vss_ctx_rag.tools.llm.llm_handler.ChatOpenAITool object at 0x7ef69cf73620>, 'notification_llm': <vss_ctx_rag.tools.llm.llm_handler.ChatOpenAITool object at 0x7ef697d24b60>, 'chat_llm': <vss_ctx_rag.tools.llm.llm_handler.ChatOpenAITool object at 0x7ef69775ccb0>}, '***MASKED***': {'graph_db': <vss_ctx_rag.tools.storage.***MASKED***_db.Neo4jGraphDB object at 0x7ef69775d6d0>}, 'elasticsearch': {}, 'reranker': {}, 'arango': {}}
+2026-02-23 07:27:33,850 INFO Creating functions using FunctionFactory
+2026-02-23 07:27:33,850 INFO Creating functions in topological order: ['summarization', 'ingestion_function', 'notification', 'retriever_function']
+2026-02-23 07:27:33,850 INFO Creating single function: summarization
+2026-02-23 07:27:33,850 INFO Adding function: summarization of type: batch_summarization
+2026-02-23 07:27:33,850 INFO Successfully created function: summarization
+2026-02-23 07:27:33,851 INFO Setting up Batcher with batch size 6
+2026-02-23 07:27:33,851 INFO Creating single function: ingestion_function
+2026-02-23 07:27:33,851 INFO Adding function: ingestion_function of type: graph_ingestion
+2026-02-23 07:27:33,851 INFO Successfully created function: ingestion_function
+2026-02-23 07:27:33,851 INFO Setting up Batcher with batch size 1
+2026-02-23 07:27:33,851 INFO Node types: ['Person', 'Vehicle', 'Location', 'Object']
+2026-02-23 07:27:33,851 INFO Embedding parallel count: 1000
+2026-02-23 07:27:33,852 INFO Creating single function: notification
+2026-02-23 07:27:33,852 INFO Adding function: notification of type: notification
+2026-02-23 07:27:33,852 INFO Successfully created function: notification
+2026-02-23 07:27:33,852 INFO Creating single function: retriever_function
+2026-02-23 07:27:33,852 INFO Adding function: retriever_function of type: graph_retrieval
+2026-02-23 07:27:33,852 INFO Successfully created function: retriever_function
+2026-02-23 07:27:33,852 INFO Starting to create question transform chain
+2026-02-23 07:27:33,852 INFO Successfully created question transform chain
+2026-02-23 07:27:33,853 INFO Successfully configured and added function to context manager: summarization
+2026-02-23 07:27:33,853 INFO Successfully configured and added function to context manager: ingestion_function
+2026-02-23 07:27:33,853 INFO Successfully configured and added function to context manager: notification
+2026-02-23 07:27:33,853 INFO Successfully configured and added function to context manager: retriever_function
+2026-02-23 07:27:33,855 INFO Triggering oldest queued query 674ec0f6-d18a-4182-89f4-98c7105b8242
+2026-02-23 07:27:33,855 INFO enable_chat_history | STREAM_HANDLER: True
+2026-02-23 07:27:33,886 INFO Filtered config: kept 4 functions out of 4
+2026-02-23 07:27:33,886 INFO Filtered config: kept 6 tools out of 8
+2026-02-23 07:27:33,887 INFO Filtered config: kept 4 functions out of 4
+2026-02-23 07:27:33,887 INFO Filtered config: kept 6 tools out of 8
+2026-02-23 07:27:33,887 INFO Configuring tools using ToolFactory
+2026-02-23 07:27:33,887 INFO Creating tools in topological order: ['summarization_llm', 'nvidia_embedding', 'notification_llm', 'notification_tool', 'chat_llm', 'graph_db']
+2026-02-23 07:27:33,887 INFO Processing tool: summarization_llm of type llm
+2026-02-23 07:27:33,887 INFO Updating existing tool 'summarization_llm' of type 'llm'
+2026-02-23 07:27:33,888 INFO Processing tool: nvidia_embedding of type embedding
+2026-02-23 07:27:33,888 INFO Updating existing tool 'nvidia_embedding' of type 'embedding'
+2026-02-23 07:27:33,888 INFO Initialized NVIDIAEmbeddingTool with model: qwen3-embedding:4b
+2026-02-23 07:27:33,888 INFO Processing tool: notification_llm of type llm
+2026-02-23 07:27:33,888 INFO Updating existing tool 'notification_llm' of type 'llm'
+2026-02-23 07:27:33,888 INFO Processing tool: notification_tool of type alert_sse_notifier
+2026-02-23 07:27:33,888 INFO Updating existing tool 'notification_tool' of type 'alert_sse_notifier'
+2026-02-23 07:27:33,888 INFO Processing tool: chat_llm of type llm
+2026-02-23 07:27:33,888 INFO Updating existing tool 'chat_llm' of type 'llm'
+2026-02-23 07:27:33,889 INFO Processing tool: graph_db of type ***MASKED***
+2026-02-23 07:27:33,889 INFO Updating existing tool 'graph_db' of type '***MASKED***'
+2026-02-23 07:27:33,889 INFO Attempting to connect to Neo4j (attempt 1/5) at graph-db:7687
+2026-02-23 07:27:33,892 INFO Successfully connected to Neo4j database.
+2026-02-23 07:27:33,896 INFO Index already exist,Skipping creation.
+2026-02-23 07:27:33,896 INFO TOOLS: {'embedding': {'nvidia_embedding': <vss_ctx_rag.tools.embedding.embedding_tool.NVIDIAEmbeddingTool object at 0x7ef697aea090>}, 'milvus': {}, 'gnn': {}, 'image': {}, 'alert_sse_notifier': {'notification_tool': <vss_ctx_rag.tools.notification.alert_sse_tool.AlertSSETool object at 0x7ef69775d250>}, 'echo_notifier': {}, 'llm': {'summarization_llm': <vss_ctx_rag.tools.llm.llm_handler.ChatOpenAITool object at 0x7ef69cf73620>, 'notification_llm': <vss_ctx_rag.tools.llm.llm_handler.ChatOpenAITool object at 0x7ef697d24b60>, 'chat_llm': <vss_ctx_rag.tools.llm.llm_handler.ChatOpenAITool object at 0x7ef69775ccb0>}, '***MASKED***': {'graph_db': <vss_ctx_rag.tools.storage.***MASKED***_db.Neo4jGraphDB object at 0x7ef69775d6d0>}, 'elasticsearch': {}, 'reranker': {}, 'arango': {}}
+2026-02-23 07:27:33,896 INFO Creating functions using FunctionFactory
+2026-02-23 07:27:33,896 INFO Creating functions in topological order: ['summarization', 'ingestion_function', 'notification', 'retriever_function']
+2026-02-23 07:27:33,896 INFO Creating single function: summarization
+2026-02-23 07:27:33,896 INFO Adding function: summarization of type: batch_summarization
+2026-02-23 07:27:33,896 INFO Successfully created function: summarization
+2026-02-23 07:27:33,896 INFO Setting up Batcher with batch size 6
+2026-02-23 07:27:33,896 INFO Creating single function: ingestion_function
+2026-02-23 07:27:33,896 INFO Adding function: ingestion_function of type: graph_ingestion
+2026-02-23 07:27:33,896 INFO Successfully created function: ingestion_function
+2026-02-23 07:27:33,896 INFO Setting up Batcher with batch size 5
+2026-02-23 07:27:33,897 INFO Node types: ['Person', 'Vehicle', 'Location', 'Object']
+2026-02-23 07:27:33,897 INFO Embedding parallel count: 1000
+2026-02-23 07:27:33,897 INFO Creating single function: notification
+2026-02-23 07:27:33,897 INFO Adding function: notification of type: notification
+2026-02-23 07:27:33,897 INFO Successfully created function: notification
+2026-02-23 07:27:33,897 INFO Creating single function: retriever_function
+2026-02-23 07:27:33,897 INFO Adding function: retriever_function of type: graph_retrieval
+2026-02-23 07:27:33,897 INFO Successfully created function: retriever_function
+2026-02-23 07:27:33,897 INFO Starting to create question transform chain
+2026-02-23 07:27:33,898 INFO Successfully created question transform chain
+2026-02-23 07:27:33,898 INFO Successfully configured and added function to context manager: summarization
+2026-02-23 07:27:33,898 INFO Successfully configured and added function to context manager: ingestion_function
+2026-02-23 07:27:33,898 INFO Successfully configured and added function to context manager: notification
+2026-02-23 07:27:33,898 INFO Successfully configured and added function to context manager: retriever_function
+2026-02-23 07:27:33,900 INFO Created video file query 674ec0f6-d18a-4182-89f4-98c7105b8242 for videoId b264f2ce-f382-4c76-9396-7ab012f8ab1d
+2026-02-23 07:27:33,900 INFO Waiting for results of query 674ec0f6-d18a-4182-89f4-98c7105b8242
+INFO:     127.0.0.1:56816 - "POST /summarize HTTP/1.1" 200 OK
+2026-02-23 07:27:33,910 INFO Status for query 674ec0f6-d18a-4182-89f4-98c7105b8242 is processing, percent complete is 0.00, size of response list is 0
+Opening in BLOCKING MODE
+2026-02-23 07:27:34 | INFO | stdout | INFO:     172.8.22.59:52052 - "GET /metrics HTTP/1.1" 404 Not Found
+2026-02-23 07:27:44,011 INFO Status for query 674ec0f6-d18a-4182-89f4-98c7105b8242 is processing, percent complete is 0.00, size of response list is 0
+2026-02-23 07:27:44 | INFO | stdout | INFO:     172.8.22.59:57092 - "GET /metrics HTTP/1.1" 404 Not Found
+2026-02-23 07:27:54,113 INFO Status for query 674ec0f6-d18a-4182-89f4-98c7105b8242 is processing, percent complete is 0.00, size of response list is 0
+2026-02-23 07:27:54 | INFO | stdout | INFO:     172.8.22.59:38342 - "GET /metrics HTTP/1.1" 404 Not Found
+2026-02-23 07:28:04 | INFO | stdout | INFO:     172.8.22.59:45998 - "GET /metrics HTTP/1.1" 404 Not Found
+2026-02-23 07:28:04,215 INFO Status for query 674ec0f6-d18a-4182-89f4-98c7105b8242 is processing, percent complete is 0.00, size of response list is 0
+2026-02-23 07:28:14 | INFO | stdout | INFO:     172.8.22.59:37804 - "GET /metrics HTTP/1.1" 404 Not Found
+2026-02-23 07:28:14,317 INFO Status for query 674ec0f6-d18a-4182-89f4-98c7105b8242 is processing, percent complete is 0.00, size of response list is 0
+2026-02-23 07:28:24 | INFO | stdout | INFO:     172.8.22.59:36568 - "GET /metrics HTTP/1.1" 404 Not Found
+2026-02-23 07:28:24,419 INFO Status for query 674ec0f6-d18a-4182-89f4-98c7105b8242 is processing, percent complete is 0.00, size of response list is 0
+chunkIdx = 1  chunk.start_pts = 5000000000                       chunk.end_pts = 6000000000 CV metadata length = 0
+2026-02-23 07:28:26,083 INFO Processed chunk for query 674ec0f6-d18a-4182-89f4-98c7105b8242, total chunks 2, processed chunks 1, chunk Chunk 1: start=5.0 end=6.0 file=/tmp/gradio/94ab7702cef93704c3ccf2aa1a7f3c88097c6d0a51bf1052e065c0f851698eb5/21117-315137086_small.mp4,
+2026-02-23 07:28:26,093 INFO Adding doc 1
+2026-02-23 07:28:26,093 INFO adding 1 to batch
+2026-02-23 07:28:26,093 INFO adding 1 to batch
+2026-02-23 07:28:34 | INFO | stdout | INFO:     172.8.22.59:60262 - "GET /metrics HTTP/1.1" 404 Not Found
+2026-02-23 07:28:34,524 INFO Status for query 674ec0f6-d18a-4182-89f4-98c7105b8242 is processing, percent complete is 45.00, size of response list is 0
+2026-02-23 07:28:44 | INFO | stdout | INFO:     172.8.22.59:43632 - "GET /metrics HTTP/1.1" 404 Not Found
+2026-02-23 07:28:44,626 INFO Status for query 674ec0f6-d18a-4182-89f4-98c7105b8242 is processing, percent complete is 45.00, size of response list is 0
+2026-02-23 07:28:54 | INFO | stdout | INFO:     172.8.22.59:59068 - "GET /metrics HTTP/1.1" 404 Not Found
+chunkIdx = 0  chunk.start_pts = 0                       chunk.end_pts = 5000000000 CV metadata length = 0
+2026-02-23 07:28:54,215 INFO Processed chunk for query 674ec0f6-d18a-4182-89f4-98c7105b8242, total chunks 2, processed chunks 2, chunk Chunk 0: start=0.0 end=5.0 file=/tmp/gradio/94ab7702cef93704c3ccf2aa1a7f3c88097c6d0a51bf1052e065c0f851698eb5/21117-315137086_small.mp4,
+2026-02-23 07:28:54,215 INFO Processed all chunks for query 674ec0f6-d18a-4182-89f4-98c7105b8242, VLM pipeline time 80.36 sec
+2026-02-23 07:28:54,215 INFO Generating summary for request 674ec0f6-d18a-4182-89f4-98c7105b8242
+2026-02-23 07:28:54,221 INFO Adding doc 0
+2026-02-23 07:28:54,222 INFO adding 0 to batch
+2026-02-23 07:28:54,222 INFO adding 0 to batch
+2026-02-23 07:28:54,222 INFO Adding doc 2
+2026-02-23 07:28:54,222 INFO adding 2 to batch
+2026-02-23 07:28:54,222 INFO adding 2 to batch
+2026-02-23 07:28:54,223 INFO Converting documents to graph format with descriptive node names
+2026-02-23 07:28:54,223 INFO Batch 0 is full. Processing ...
+2026-02-23 07:28:54,727 INFO Status for query 674ec0f6-d18a-4182-89f4-98c7105b8242 is processing, percent complete is 90.00, size of response list is 0
+2026-02-23 07:29:04 | INFO | stdout | INFO:     172.8.22.59:57382 - "GET /metrics HTTP/1.1" 404 Not Found
+2026-02-23 07:29:04,829 INFO Status for query 674ec0f6-d18a-4182-89f4-98c7105b8242 is processing, percent complete is 90.00, size of response list is 0
+2026-02-23 07:29:12,034 INFO Min start pts: 0, Max end pts: 6000000000
+2026-02-23 07:29:12,034 INFO Min start ntp: 1970-01-01T00:00:00.000Z, Max end ntp: 1970-01-01T00:00:06.000Z
+2026-02-23 07:29:12,034 INFO Min start ntp float: 0.0, Max end ntp float: 6.0
+2026-02-23 07:29:12,034 INFO Batch 0 summary: • 5:00.000:6:00.000: Workers were not wearing personal protective equipment (PPE) and were chitchatting at the counter.
+2026-02-23 07:29:12,034 INFO Total Tokens: 210, Prompt Tokens: 174, Completion Tokens: 36, Successful Requests: 1, Total Cost (USD): $0.0
+2026-02-23 07:29:12,742 INFO Replacing node IDs with hashed values
+2026-02-23 07:29:13,367 INFO GraphRAG Creation for 5 docs
+Total Tokens: 1963, Prompt Tokens: 1811, Completion Tokens: 152, Successful Requests: 2, Total Cost (USD): $0.0
+2026-02-23 07:29:13,368 INFO Batch Summarization Acall: {'start_index': 0, 'end_index': 1}
+2026-02-23 07:29:13,368 INFO Target Batch Start: 0
+2026-02-23 07:29:13,368 INFO Target Batch End: 0
+2026-02-23 07:29:13,369 INFO Starting post-processing...
+2026-02-23 07:29:13,390 INFO creating FIRST_CHUNK and NEXT_CHUNK relationships between chunks
+2026-02-23 07:29:13,609 INFO Calculating embeddings for 2 chunks...
+2026-02-23 07:29:13,643 INFO Number of Batches Fetched: 1
+2026-02-23 07:29:13,643 INFO Need 1 batches. Moving forward.
+2026-02-23 07:29:13,643 INFO Number of Batches Fetched: 1
+2026-02-23 07:29:14,005 INFO Summary Aggregation Done
+2026-02-23 07:29:14,005 INFO Total Tokens: 211, Prompt Tokens: 186, Completion Tokens: 25, Successful Requests: 1, Total Cost (USD): $0.0
+2026-02-23 07:29:14 | INFO | stdout | INFO:     172.8.22.59:43182 - "GET /metrics HTTP/1.1" 404 Not Found
+2026-02-23 07:29:14,929 INFO Status for query 674ec0f6-d18a-4182-89f4-98c7105b8242 is processing, percent complete is 90.00, size of response list is 0
+2026-02-23 07:29:24 | INFO | stdout | INFO:     172.8.22.59:54782 - "GET /metrics HTTP/1.1" 404 Not Found
+2026-02-23 07:29:25,031 INFO Status for query 674ec0f6-d18a-4182-89f4-98c7105b8242 is processing, percent complete is 90.00, size of response list is 0
+2026-02-23 07:29:26,783 INFO Persisting 2 chunk embeddings.
+2026-02-23 07:29:26,830 INFO Starting summary embedding creation process.
+2026-02-23 07:29:26,848 INFO Found 1 summaries needing embedding.
+2026-02-23 07:29:26,968 INFO Persisting embeddings for 1 summaries.
+2026-02-23 07:29:26,996 INFO Merging 6 HAS_ENTITY relationships.
+2026-02-23 07:29:27,134 INFO Updating KNN graph using index 'vector' with min score 0.8
+2026-02-23 07:29:27,186 INFO KNN graph update query executed.
+2026-02-23 07:29:27,190 INFO Starting entity embedding creation process.
+2026-02-23 07:29:27,215 INFO Found 9 entities needing embedding. Processing in batches.
+2026-02-23 07:29:27,215 INFO Calculating embeddings for 9 entities in batch.
+2026-02-23 07:29:27,437 INFO Persisting embeddings for 9 entities.
+2026-02-23 07:29:27,521 INFO Finalizing Neo4j graph: Creating indexes.
+2026-02-23 07:29:27,521 INFO Starting the process of creating full-text indexes.
+2026-02-23 07:29:27,521 INFO Creating a full-text index for type 'entities'.
+2026-02-23 07:29:27,546 INFO Full-text index for type 'entities' created successfully.
+2026-02-23 07:29:27,547 INFO Creating a full-text index for type 'keyword'.
+2026-02-23 07:29:27,555 INFO Full-text index for type 'keyword' created successfully.
+2026-02-23 07:29:27,556 INFO Creating a full-text index for type 'subtitles'.
+2026-02-23 07:29:27,565 INFO Full-text index for type 'subtitles' created successfully.
+2026-02-23 07:29:27,565 INFO Creating a vector index for type 'vector'.
+2026-02-23 07:29:27,568 INFO Starting the process to create vector index.
+2026-02-23 07:29:27,573 INFO Vector index for chunk created successfully.
+2026-02-23 07:29:27,573 INFO Full-text and vector index creation process completed.
+2026-02-23 07:29:27,573 INFO Neo4j indexes created.
+2026-02-23 07:29:27,573 INFO Graph post-processing complete.
+2026-02-23 07:29:27,574 INFO Summary generated for video file request 674ec0f6-d18a-4182-89f4-98c7105b8242, total processing time - 113.72 seconds, summary
+2026-02-23 07:29:28,064 INFO Status for query 674ec0f6-d18a-4182-89f4-98c7105b8242 is successful, percent complete is 100.00, size of response list is 1
+2026-02-23 07:29:29 | INFO | stdout | INFO:     10.20.20.11:56874 - "POST /gradio_api/queue/join HTTP/1.1" 200 OK
+2026-02-23 07:29:29 | INFO | stdout | INFO:     10.20.20.11:56874 - "GET /gradio_api/queue/data?session_hash=vxk6up5rj9h HTTP/1.1" 200 OK
+2026-02-23 07:29:34 | INFO | stdout | INFO:     172.8.22.59:40934 - "GET /metrics HTTP/1.1" 404 Not Found
+2026-02-23 07:29:44 | INFO | stdout | INFO:     172.8.22.59:34906 - "GET /metrics HTTP/1.1" 404 Not Found
+2026-02-23 07:29:54 | INFO | stdout | INFO:     172.8.22.59:56040 - "GET /metrics HTTP/1.1" 404 Not Found
+2026-02-23 07:30:04 | INFO | stdout | INFO:     172.8.22.59:47982 - "GET /metrics HTTP/1.1" 404 Not Found
+

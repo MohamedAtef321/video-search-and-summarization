@@ -23,6 +23,8 @@ import gradio as gr
 import pkg_resources
 import uvicorn
 from fastapi import FastAPI
+from fastapi.responses import Response
+from prometheus_client import generate_latest, REGISTRY, PROCESS_COLLECTOR, PLATFORM_COLLECTOR, GC_COLLECTOR
 
 from client.rtsp_stream import build_rtsp_stream
 from client.summarization import build_summarization
@@ -36,6 +38,20 @@ enable_logs = True
 template_queries = {}
 appConfig = {}
 app = FastAPI()
+
+# Expose Prometheus metrics endpoint so monitoring scrapers don't get 404
+try:
+    REGISTRY.unregister(PROCESS_COLLECTOR)
+    REGISTRY.unregister(PLATFORM_COLLECTOR)
+    REGISTRY.unregister(GC_COLLECTOR)
+except Exception:
+    pass  # Already unregistered (e.g. if shared with backend process)
+
+
+@app.get("/metrics", include_in_schema=False)
+def metrics():
+    return Response(content=generate_latest(), media_type="text/plain")
+
 
 with tempfile.NamedTemporaryFile() as temp:
     temp.write(pkg_resources.resource_string(__name__, "client/assets/kaizen-theme.json"))
