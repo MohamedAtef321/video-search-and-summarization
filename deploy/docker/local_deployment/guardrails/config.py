@@ -88,7 +88,10 @@ def init(app: LLMRails):
 
     # Dynamically create a subclass with fixed Ollama connection params
     class FixedOllamaEmbeddingModel(OllamaEmbeddingModel):
-        def __init__(self, embedding_model: str):
+        def __init__(self, embedding_model: str, **kwargs):
+            # kwargs absorbs extra params (base_url, api_key) that NeMo Guardrails
+            # passes from the config `parameters` block. We ignore them here and
+            # use the values already captured in the closure above.
             super().__init__(embedding_model, base_url=base_url, api_key=api_key)
 
     FixedOllamaEmbeddingModel.__name__ = "FixedOllamaEmbeddingModel"

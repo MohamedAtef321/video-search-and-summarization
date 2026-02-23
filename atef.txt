@@ -1,0 +1,180 @@
+docker logs -f local_deployment-via-server-1
+cuInit(0) failed with error 100
+GPU has  decode engines
+Free GPU memory is [Insufficient MiB
+/opt/nvidia/via/start_via.sh: line 78: [: [Insufficient: integer expression expected
+Total GPU memory is [Insufficient MiB per GPU
+/opt/nvidia/via/start_via.sh: line 104: [[: [Insufficient: syntax error: operand expected (error token is "[Insufficient")
+/opt/nvidia/via/start_via.sh: line 122: [[: [Insufficient: syntax error: operand expected (error token is "[Insufficient")
+/opt/nvidia/via/start_via.sh: line 124: [[: [Insufficient: syntax error: operand expected (error token is "[Insufficient")
+Auto-selecting VLM Batch Size to 3
+Using openai-compat
+Starting VIA server in release mode
+2026-02-23 05:06:12,799 INFO Initializing VIA Stream Handler
+INFO:     Started server process [177]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:60000 (Press CTRL+C to quit)
+Exception in thread Thread-2 (run):
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+  File "/usr/local/lib/python3.12/dist-packages/nemoguardrails/actions/llm/generation.py", line 132, in init
+    await asyncio.gather(
+  File "/usr/local/lib/python3.12/dist-packages/nemoguardrails/actions/llm/generation.py", line 236, in _init_user_message_index
+    await self.user_message_index.add_items(items)
+  File "/usr/local/lib/python3.12/dist-packages/nemoguardrails/embeddings/basic.py", line 185, in add_items
+    await self._get_embeddings([item.text for item in items])
+  File "/usr/local/lib/python3.12/dist-packages/nemoguardrails/embeddings/cache.py", line 316, in wrapper_decorator
+    return await func(self, texts)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/nemoguardrails/embeddings/basic.py", line 154, in _get_embeddings
+    self._init_model()
+  File "/usr/local/lib/python3.12/dist-packages/nemoguardrails/embeddings/basic.py", line 137, in _init_model
+    self._model = init_embedding_model(
+                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/nemoguardrails/embeddings/providers/__init__.py", line 99, in init_embedding_model
+    model = provider_class(embedding_model=embedding_model, **embedding_params)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: init.<locals>.FixedOllamaEmbeddingModel.__init__() got an unexpected keyword argument 'base_url'
+Error in generate_async: LLM Call Exception: Error code: 400 - {'error': {'message': 'json: cannot unmarshal array into Go struct field CompletionRequest.prompt of type string', 'type': 'invalid_request_error', 'param': None, 'code': None}}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/dist-packages/nemoguardrails/actions/llm/utils.py", line 92, in llm_call
+    result = await llm.agenerate_prompt(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/langchain_core/language_models/llms.py", line 802, in agenerate_prompt
+    return await self.agenerate(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/langchain_core/language_models/llms.py", line 1263, in agenerate
+    return await self._agenerate_helper(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/langchain_core/language_models/llms.py", line 1074, in _agenerate_helper
+    await self._agenerate(
+  File "/usr/local/lib/python3.12/dist-packages/langchain_openai/llms/base.py", line 524, in _agenerate
+    response = await self.async_client.create(prompt=_prompts, **params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/openai/resources/completions.py", line 1091, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/openai/_base_client.py", line 1794, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/openai/_base_client.py", line 1594, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'json: cannot unmarshal array into Go struct field CompletionRequest.prompt of type string', 'type': 'invalid_request_error', 'param': None, 'code': None}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/dist-packages/nemoguardrails/rails/llm/llmrails.py", line 696, in generate_async
+    new_events = await self.runtime.generate_events(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/nemoguardrails/colang/v1_0/runtime/runtime.py", line 167, in generate_events
+    next_events = await self._process_start_action(events)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/nemoguardrails/colang/v1_0/runtime/runtime.py", line 363, in _process_start_action
+    result, status = await self.action_dispatcher.execute_action(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/nemoguardrails/actions/action_dispatcher.py", line 253, in execute_action
+    raise e
+  File "/usr/local/lib/python3.12/dist-packages/nemoguardrails/actions/action_dispatcher.py", line 214, in execute_action
+    result = await result
+             ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/nemoguardrails/library/self_check/input_check/actions.py", line 72, in self_check_input
+    response = await llm_call(llm, prompt, stop=stop)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/nemoguardrails/actions/llm/utils.py", line 96, in llm_call
+    raise LLMCallException(e)
+nemoguardrails.actions.llm.utils.LLMCallException: LLM Call Exception: Error code: 400 - {'error': {'message': 'json: cannot unmarshal array into Go struct field CompletionRequest.prompt of type string', 'type': 'invalid_request_error', 'param': None, 'code': None}}
+2026-02-23 05:06:15,806 ERROR Error in guardrails: LLM Call Exception: Error code: 400 - {'error': {'message': 'json: cannot unmarshal array into Go struct field CompletionRequest.prompt of type string', 'type': 'invalid_request_error', 'param': None, 'code': None}}
+2026-02-23 05:06:15,806 INFO Stopping VIA Stream Handler
+2026-02-23 05:06:15,806 ERROR Failed to load VIA stream handler - 'ViaStreamHandler' object has no attribute '_cv_pipeline'
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/dist-packages/nemoguardrails/actions/llm/utils.py", line 92, in llm_call
+    result = await llm.agenerate_prompt(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/langchain_core/language_models/llms.py", line 802, in agenerate_prompt
+    return await self.agenerate(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/langchain_core/language_models/llms.py", line 1263, in agenerate
+    return await self._agenerate_helper(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/langchain_core/language_models/llms.py", line 1074, in _agenerate_helper
+    await self._agenerate(
+  File "/usr/local/lib/python3.12/dist-packages/langchain_openai/llms/base.py", line 524, in _agenerate
+    response = await self.async_client.create(prompt=_prompts, **params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/openai/resources/completions.py", line 1091, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/openai/_base_client.py", line 1794, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/openai/_base_client.py", line 1594, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'json: cannot unmarshal array into Go struct field CompletionRequest.prompt of type string', 'type': 'invalid_request_error', 'param': None, 'code': None}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/nvidia/via/via-engine/via_stream_handler.py", line 675, in _create_llm_rails_pool
+    response = self._LLMRailsPool[0].generate(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/nemoguardrails/rails/llm/llmrails.py", line 1005, in generate
+    return loop.run_until_complete(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+  File "/usr/local/lib/python3.12/dist-packages/nemoguardrails/rails/llm/llmrails.py", line 696, in generate_async
+    new_events = await self.runtime.generate_events(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/nemoguardrails/colang/v1_0/runtime/runtime.py", line 167, in generate_events
+    next_events = await self._process_start_action(events)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/nemoguardrails/colang/v1_0/runtime/runtime.py", line 363, in _process_start_action
+    result, status = await self.action_dispatcher.execute_action(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/nemoguardrails/actions/action_dispatcher.py", line 253, in execute_action
+    raise e
+  File "/usr/local/lib/python3.12/dist-packages/nemoguardrails/actions/action_dispatcher.py", line 214, in execute_action
+    result = await result
+             ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/nemoguardrails/library/self_check/input_check/actions.py", line 72, in self_check_input
+    response = await llm_call(llm, prompt, stop=stop)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/nemoguardrails/actions/llm/utils.py", line 96, in llm_call
+    raise LLMCallException(e)
+nemoguardrails.actions.llm.utils.LLMCallException: LLM Call Exception: Error code: 400 - {'error': {'message': 'json: cannot unmarshal array into Go struct field CompletionRequest.prompt of type string', 'type': 'invalid_request_error', 'param': None, 'code': None}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/nvidia/via/via-engine/via_server.py", line 247, in run
+    self._stream_handler = ViaStreamHandler(self._args)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/nvidia/via/via-engine/via_stream_handler.py", line 588, in __init__
+    self._create_llm_rails_pool()
+  File "/opt/nvidia/via/via-engine/via_stream_handler.py", line 680, in _create_llm_rails_pool
+    self.stop(True)
+  File "/opt/nvidia/via/via-engine/via_stream_handler.py", line 2876, in stop
+    if self._cv_pipeline:
+       ^^^^^^^^^^^^^^^^^
+AttributeError: 'ViaStreamHandler' object has no attribute '_cv_pipeline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/nvidia/via/via-engine/via_server.py", line 2376, in <module>
+    server.run()
+  File "/opt/nvidia/via/via-engine/via_server.py", line 249, in run
+    raise ViaException(f"Failed to load VIA stream handler - {str(ex)}")
+via_exception.ViaException: ViaException - code: InternalServerError message: Failed to load VIA stream handler - 'ViaStreamHandler' object has no attribute '_cv_pipeline'
+Killed process with PID 174
