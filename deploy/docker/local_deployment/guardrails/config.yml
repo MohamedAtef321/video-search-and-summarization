@@ -54,6 +54,26 @@ sample_conversation: |
 
 # The prompts below are the same as the ones from `nemoguardrails/llm/prompts/llama3.yml`.
 prompts:
+  # Fix for Ollama: self_check_input defaults to /v1/completions (prompt as array).
+  # Using messages: format forces /v1/chat/completions (prompt as string), which Ollama supports.
+  - task: self_check_input
+    messages:
+      - type: system
+        content: |
+          Your task is to check if the following user message complies with the policy.
+
+          Policy:
+          - Should not contain harmful, offensive, or inappropriate content.
+          - Should be relevant to the topic of the assistant (video/image analysis).
+
+          User message: "{{ user_input }}"
+
+          Question: Should the user message be blocked?
+          Answer [Yes/No]:
+      - type: assistant
+        content: ""
+    output_parser: is_yes
+
   - task: general
     messages:
       - type: system
