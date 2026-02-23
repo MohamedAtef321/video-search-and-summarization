@@ -21,6 +21,8 @@ from typing import List, Optional
 from nemoguardrails import LLMRails
 from nemoguardrails.embeddings.providers.base import EmbeddingModel
 from nemoguardrails.embeddings.providers.registry import EmbeddingProviderRegistry
+from nemoguardrails.llm.providers import register_llm_provider
+from langchain_openai import ChatOpenAI
 
 
 class OllamaEmbeddingModel(EmbeddingModel):
@@ -77,6 +79,8 @@ def _get_embedding_model_parameters(config):
 
 
 def init(app: LLMRails):
+    register_llm_provider("ollama_chat", ChatOpenAI)
+
     embedding_parameters = _get_embedding_model_parameters(app.config)
 
     if not embedding_parameters:
