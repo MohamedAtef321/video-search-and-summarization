@@ -1,45 +1,53 @@
 #!/bin/bash
-# Local Execution Setup Script for VSS Engine (WSL2/Ubuntu)
-# This script installs all necessary OS packages and Python dependencies
-# to run the VIA Engine natively without Docker.
+# Local Execution Setup Script for VSS Engine (No-Sudo/User-Level)
+# This script installs Python dependencies using 'uv'.
+# Note: System-level libraries (GStreamer, FFmpeg, etc.) must be pre-installed by an admin.
 
 set -e
 
 echo "=================================================="
-echo "Setting up VSS Engine for local execution (WSL2)"
+echo "Setting up VSS Engine for local execution (User-Level)"
 echo "=================================================="
 
-# 1. Update and install system dependencies
-echo "[1/4] Installing system dependencies (GStreamer, PyGObject, etc.)..."
-sudo apt-get update
-sudo apt-get install -y \
-    python3-pip \
-    python3-venv \
-    python3-gi \
-    python3-gi-cairo \
-    gir1.2-gtk-3.0 \
-    python3-gst-1.0 \
-    libgirepository1.0-dev \
-    libcairo2-dev \
-    gstreamer1.0-plugins-bad \
-    gstreamer1.0-plugins-good \
-    gstreamer1.0-plugins-ugly \
-    gstreamer1.0-libav \
-    gstreamer1.0-tools \
-    ffmpeg
-    
-# 2. Create and activate a virtual environment
-echo "[2/4] Setting up Python virtual environment..."
+# 1. System Dependencies Information
+echo "[1/3] Checking/Listing required system dependencies..."
+echo "Note: This script skips system package installation as 'sudo' is not used."
+echo "Please ensure the following are installed on your system (ask an admin if needed):"
+echo "  - GStreamer 1.0 (plugins: bad, good, ugly, libav)"
+echo "  - FFmpeg"
+echo "  - Python3 headers and GObject Introspection"
+echo "  - Cairo development headers"
+echo "--------------------------------------------------"
+
+# 2. Install uv (modern Python package manager)
+echo "[2/3] Installing uv..."
+if ! command -v uv >/dev/null 2>&1; then
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+    # Ensure uv is in the path for the current script
+    export PATH="$HOME/.cargo/bin:$PATH"
+else
+    echo "uv is already installed."
+fi
+
+# 3. Create and setup virtual environment with uv
+echo "[3/3] Setting up Python virtual environment with uv..."
 if [ ! -d "vss_env" ]; then
-    python3 -m venv --system-site-packages vss_env
+    uv venv --system-site-packages vss_env
 fi
 source vss_env/bin/activate
 
-# 3. Install required Python packages
-echo "[3/4] Installing Python dependencies..."
-# Core dependencies derived from via_server.py/via_demo_client.py
-pip install --upgrade pip
-pip install fastapi \
+# 4. Install required Python packages via uv
+echo "Installing Python dependencies with uv..."
+# Optional: Specify your Nexus PyPI server if pypi.org is blocked
+NEXUS_INDEX_URL="${NEXUS_INDEX_URL:-http://nexus.eg01.etisalat.net:8081/repository/pypi/simple}"
+
+UV_INSTALL_ARGS=""
+if [ -n "$NEXUS_INDEX_URL" ]; then
+    UV_INSTALL_ARGS="--index-url $NEXUS_INDEX_URL"
+    echo "Using custom PyPI index: $NEXUS_INDEX_URL"
+fi
+
+uv pip install $UV_INSTALL_ARGS fastapi \
     uvicorn \
     aiofiles \
     prometheus_client \
@@ -52,12 +60,7 @@ pip install fastapi \
     pyaml-env \
     python-multipart
 
-# Note: The original Dockerfile also installs context-aware-rag dependencies, 
-# but they are very large and complex to build natively (cuml, cugraph).
-# Since you use the API-based mode and CA_RAG is usually disabled by default,
-# we are skipping them to keep the installation lean.
-
-echo "[4/4] Environment setup complete."
+echo "Environment setup complete."
 echo "=================================================="
 echo "To run the VIA Server locally:"
 echo "1. Activate the environment: source vss_env/bin/activate"
