@@ -27,19 +27,28 @@ sudo apt-get install -y \
     gstreamer1.0-libav \
     gstreamer1.0-tools \
     ffmpeg
-
+    
 # 2. Create and activate a virtual environment
-echo "[2/4] Setting up Python virtual environment..."
+echo "[2/4] Setting up Python virtual environment with uv..."
+if ! command -v uv >/dev/null 2>&1; then
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+    export PATH="$HOME/.cargo/bin:$PATH"
+fi
+
+if [ -d "vss_env" ] && [ ! -f "vss_env/bin/activate" ]; then
+    echo "Virtual environment is broken. Recreating..."
+    rm -rf vss_env
+fi
+
 if [ ! -d "vss_env" ]; then
-    python3 -m venv vss_env
+    uv venv --system-site-packages vss_env
 fi
 source vss_env/bin/activate
 
 # 3. Install required Python packages
-echo "[3/4] Installing Python dependencies..."
+echo "[3/4] Installing Python dependencies with uv..."
 # Core dependencies derived from via_server.py/via_demo_client.py
-pip install --upgrade pip
-pip install fastapi \
+uv pip install fastapi \
     uvicorn \
     aiofiles \
     prometheus_client \

@@ -55,7 +55,9 @@ term_out.setLevel(logging.INFO)
 term_out.setFormatter(LogFormatter("%(asctime)s %(levelname)s %(message)s"))
 logger.addHandler(term_out)
 
-log_file = logging.handlers.TimedRotatingFileHandler("/tmp/via-logs/via_engine.log")
+log_path = "/tmp/via-logs/via_engine.log"
+os.makedirs(os.path.dirname(log_path), exist_ok=True)
+log_file = logging.handlers.TimedRotatingFileHandler(log_path)
 log_file.setLevel(LOG_PERF_LEVEL)
 log_file.setFormatter(LogFormatter("%(asctime)s %(levelname)s %(message)s"))
 logger.addHandler(log_file)
