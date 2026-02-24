@@ -27,7 +27,11 @@ import traceback
 import uuid
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
-from typing import Annotated, List, Optional
+from typing import List, Optional
+try:
+    from typing import Annotated
+except ImportError:
+    from typing_extensions import Annotated
 from uuid import UUID
 
 import aiofiles

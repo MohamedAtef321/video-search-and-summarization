@@ -16,7 +16,11 @@ Translates between requests/responses and ViaStreamHandler and AssetManager meth
 import os
 from datetime import datetime
 from enum import Enum
-from typing import Annotated, List, Literal, Optional, Union
+from typing import List, Literal, Optional, Union
+try:
+    from typing import Annotated
+except ImportError:
+    from typing_extensions import Annotated
 from uuid import UUID
 
 from pydantic import (
